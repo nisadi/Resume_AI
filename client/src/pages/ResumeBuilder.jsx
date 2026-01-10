@@ -5,6 +5,8 @@ import { ArrowLeft, Briefcase, GraduationCap, Sparkles, User, FileText, Folder, 
 import PersonalInfoForm from "../components/PersonalInfoForm";
 import ResumePreview from "../components/ResumePreview";
 import TemplateSelector from "../components/TemplateSelector";
+import ColorPicker from "../components/ColorPicker";
+import ProfessionalSummary from "../components/ProfessionalSummary";
 
 
 const ResumeBuilder = () => {
@@ -15,7 +17,7 @@ const ResumeBuilder = () => {
       _id: "",
       title: "",
       personal_info: {},
-      professinal_summary: "",
+      professional_summary: "",
       experience: [],
       education: [],
       project: [],
@@ -38,7 +40,7 @@ const ResumeBuilder = () => {
 
     const section = [
       { id: "personal", name: "Personal info", icon: User },
-      { id: "summery", name: "Summery", icon: FileText },
+      { id: "summary", name: "Summary", icon: FileText },
       { id: "experience", name: "Experience", icon: Briefcase },
       { id: "education", name: "Education", icon: GraduationCap },
       { id: "projects", name: "Projects", icon: Folder },
@@ -87,6 +89,7 @@ const ResumeBuilder = () => {
                   
                   <div className="flex justify-between items-center mb-6 border-b border-gray-300 py-1">
                     <TemplateSelector selectedTemplate={resumeData.template} onChange = {(template)=> setResumeData(prev => ({...prev, template}))}/>
+                    <ColorPicker selectedColor={resumeData.accent_color} onChange={(color)=>setResumeData(prev => ({...prev, accent_color: color}))} />
                   </div>
 
                   <div className="flex items-center">
@@ -99,7 +102,7 @@ const ResumeBuilder = () => {
                         }
                         className="flex items-center gap-1 p-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50
                             transition-all"
-                        disabled={activationIndex === 0}
+                        disabled={activeSectionIndex === 0}
                       >
                         <ChevronLeft className="size-4" /> Previous
                       </button>
@@ -123,6 +126,10 @@ const ResumeBuilder = () => {
                     {activeSection.id === 'personal' && (
                         <PersonalInfoForm data={resumeData.personal_info} onChange={(data)=>setResumeData(prev => ({...prev, personal_info:data}))}
                         removeBackground={removeBackground} setRemoveBackground={setRemoveBackground}/>
+                    )}
+                    {activeSection.id === 'summary' && (
+                      <ProfessionalSummary data={resumeData.professional_summary} onChange={(data)=> setResumeData(prev=> ({...prev,
+                        professional_summary: data}))} setResumeData={setResumeData}/>
                     )}
                 </div>
               </div>
