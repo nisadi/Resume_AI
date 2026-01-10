@@ -8,7 +8,7 @@
 .dashboard {
   width: 100%;
   height: 100vh;
-  background: #fff;
+  background: #ffffff;
 }
 
 /* Navbar */
@@ -30,7 +30,7 @@
   color: #22c55e;
 }
 
-.nav-right {
+.right {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -38,6 +38,7 @@
 
 .user {
   font-size: 14px;
+  color: #333;
 }
 
 .logout {
@@ -48,8 +49,8 @@
   cursor: pointer;
 }
 
-/* Body */
-.body {
+/* Content */
+.content {
   padding: 40px;
 }
 
@@ -66,22 +67,29 @@
   border-radius: 14px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .card:hover {
   background: #f8fafc;
+  transform: translateY(-4px);
 }
 
-/* Icon */
+.card p {
+  margin-top: 14px;
+  font-size: 15px;
+  color: #374151;
+}
+
+/* Icons */
 .icon {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  color: #fff;
+  color: white;
   font-size: 30px;
   display: flex;
   align-items: center;
@@ -96,14 +104,8 @@
   background: linear-gradient(135deg, #a855f7, #ec4899);
 }
 
-.card p {
-  margin-top: 14px;
-  font-size: 15px;
-  color: #374151;
-}
-
 /* Bottom line */
-.line {
+.bottom-line {
   margin-top: 40px;
   width: 280px;
   height: 1px;
