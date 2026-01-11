@@ -17,10 +17,7 @@ const ClassicTemplate = ({ data, accentColor }) => {
           className="text-center mb-8 pb-6 border-b-2"
           style={{ borderColor: accentColor }}
         >
-          <h1
-            className="text-3xl font-bold mb-"
-            style={{ color: accentColor }}
-          >
+          <h1 className="text-3xl font-bold mb-" style={{ color: accentColor }}>
             {data.personal_info?.full_name || "Your Name"}
           </h1>
 
@@ -142,6 +139,7 @@ const ClassicTemplate = ({ data, accentColor }) => {
                     <li className="font-semibold text-gray-800 ">
                       {proj.name}
                     </li>
+                    <p className="text-gray-600">{proj.type}</p>
                     <p className="text-gray-600">{proj.description}</p>
                   </div>
                 </div>
