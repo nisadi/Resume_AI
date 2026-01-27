@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+.footer-link {
+  @apply text-gray-600 mb-1 cursor-pointer
+         transition-all duration-300 ease-in-out
+         hover:text-green-600 hover:translate-x-1;
+}

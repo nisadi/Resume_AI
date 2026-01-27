@@ -1,12 +1,9 @@
-
-function App() {
-  
-
+import Home from "./Pages/Home";
+import React from 'react'
+export default function App() {
   return (
     <>
-    <h1>Home</h1>
+      <Home/>
     </>
-  )
+  );
 }
-
-export default App
