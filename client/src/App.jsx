@@ -1,12 +1,16 @@
+import { Routes, Route } from "react-router-dom"
+import ResumeBuilder from "./pages/ResumeBuilder";
 
 function App() {
   
 
   return (
     <>
-    <h1>Home</h1>
+      <Routes>
+          <Route path='/' element={<ResumeBuilder/>}/>
+      </Routes>
     </>
-  )
+  );
 }
 
 export default App
